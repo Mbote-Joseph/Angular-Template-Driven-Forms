@@ -1,0 +1,52 @@
+{{ model.id }} {{ model.name }} {{ model.salary }} {{ model.skill }}
+<div class="container">
+  <h1>Employee Form</h1>
+  <form>
+    <div class="form-group">
+      <label for="id">ID</label>
+      <input
+        type="text"
+        class="form-control"
+        id="id"
+        required
+        [(ngModel)]="model.id"
+        name="id"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        required
+        [(ngModel)]="model.name"
+        name="name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary</label>
+      <input
+        type="text"
+        class="form-control"
+        id="salary"
+        required
+        [(ngModel)]="model.salary"
+        name="salary"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="skills">Skills</label>
+      <select class="form-control" id="skills" required>
+        <option *ngFor="let skill of skills">{{ skill }}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+      Submit
+    </button>
+  </form>
+</div>
